@@ -1,0 +1,40 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "watch": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@typeit/discord": "^4.0.9",
+    "b64-to-blob": "^1.2.19",
+    "discord.js": "^12.5.3",
+    "minecraft-server-status": "^1.0.1",
+    "sharp": "^0.28.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.0",
+    "@types/node": "^14.14.41",
+    "@types/sharp": "^0.28.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm start",
+    "ext": "ts"
+  }
+}

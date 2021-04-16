@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  api:
+    build: .
+    restart: always
+    environment: 
+        - DISCORD_API_KEY=<Empty>
