@@ -15,11 +15,6 @@ export class MainDiscord {
 
     public lastStatus: any = null;
 
-    @CommandNotFound()
-    notFoundA(command: CommandMessage) {
-        command.reply("Command not found");
-    }
-
     @Once('ready')
     ready(args: ArgsOf<"ready">, client: Client) {
         console.log('Connected')
@@ -28,7 +23,7 @@ export class MainDiscord {
                 // return a.filter(x => !b.includes(x)); 
             // }
             const status = await getStatus(false);
-            if (this.lastStatus != null && status.players.now != this.lastStatus.players.now) {
+            if (this.lastStatus != null && status.players && status.players.now != this.lastStatus.players.now) {
                 const channel = client.channels.cache.get("831528071835549706");
                 // const diffplayers = diff(status.players.sample.map(({ name }) => name), this.lastStatus.players.sample.map(({ name }) => name));
                 // const diffplayersrevers = diff(this.lastStatus.players.sample.map(({ name }) => name), status.players.sample.map(({ name }) => name));
