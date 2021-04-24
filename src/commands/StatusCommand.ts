@@ -17,7 +17,7 @@ export abstract class StatusCommand {
             .setThumbnail('attachment://favicon.png')
             .setFooter(`requested by (${command.author.tag})`)
             .addField('Status', status.online ? 'Online' : 'Offline')
-        if (!status.online) {
+        if (status.online) {
             embed.addField('Motd', status.motd)
                 .addField('Players', `${status.players.now}/${status.players.max}`)
                 .addField('Version', status.server.name, true)
