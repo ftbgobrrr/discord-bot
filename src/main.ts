@@ -14,8 +14,6 @@ export const bot = new Client({
     IntentsBitField.Flags.Guilds,
     IntentsBitField.Flags.GuildMembers,
     IntentsBitField.Flags.GuildMessages,
-    IntentsBitField.Flags.GuildMessageReactions,
-    IntentsBitField.Flags.GuildVoiceStates,
   ],
 
   // Debug logs are disabled in silent mode
@@ -62,12 +60,12 @@ async function run() {
   await importx(dirname(import.meta.url) + "/{events,commands}/**/*.{ts,js}");
 
   // Let's start the bot
-  if (!process.env.BOT_TOKEN) {
+  if (!process.env.DISCORD_API_KEY) {
     throw Error("Could not find BOT_TOKEN in your environment");
   }
 
   // Log in with your bot token
-  await bot.login(process.env.BOT_TOKEN);
+  await bot.login(process.env.DISCORD_API_KEY);
 }
 
 run();

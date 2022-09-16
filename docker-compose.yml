@@ -1,7 +1,9 @@
-version: "3"
+version: "3.7"
 services:
-  app:
+  api:
     build: .
-    command: node build/main.js
-    environment:
-      - BOT_TOKEN=${BOT_TOKEN}
+    restart: always
+    environment: 
+        - DISCORD_API_KEY=
+        - SERVER_IP=ftbgobrrr.llelievr.dev
+        - STATUS_CHANNEL=1020386473092071424

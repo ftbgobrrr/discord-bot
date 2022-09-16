@@ -17,14 +17,31 @@
     "@discordx/pagination": "^3.0.0",
     "discord.js": "^14.3.0",
     "discordx": "^11.2.0",
-    "reflect-metadata": "^0.1.13"
+    "mc-server-status": "^2.0.2",
+    "minecraft-server-status": "^1.0.1",
+    "reflect-metadata": "^0.1.13",
+    "sharp": "^0.31.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.18",
+    "@types/sharp": "^0.30.5",
     "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
     "typescript": "4.8.3"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm start",
+    "ext": "ts"
   },
   "engines": {
     "node": ">=16.0.0",
